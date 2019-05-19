@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "webpack": "babel-node ./node_modules/webpack/bin/webpack",
+    "build": "babel-node ./node_modules/webpack/bin/webpack",
     "start": "babel-node ./node_modules/webpack-dev-server/bin/webpack-dev-server --open",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "predeploy": "npm run build",
+    "deploy": "hp-pages -d build"
   },
   "repository": {
     "type": "git",
@@ -17,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/Psorek/aboutMe/issues"
   },
-  "homepage": "https://github.com/Psorek/aboutMe#readme",
+  "homepage": "https://psorek.github.io/aboutMe",
   "dependencies": {
     "babel": "^6.23.0",
     "react": "^16.8.6",
@@ -31,7 +32,7 @@
     "@babel/preset-react": "7.0.0",
     "babel-loader": "8.0.6",
     "css-loader": "2.1.1",
-    "file-loader": "^3.0.1",
+    "file-loader": "3.0.1",
     "html-webpack-plugin": "3.2.0",
     "path": "0.12.7",
     "style-loader": "0.23.1",
